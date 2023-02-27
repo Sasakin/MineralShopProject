@@ -1,4 +1,4 @@
-create table admins
+create table users
 (
     id         bigserial not null,
     first_name varchar(255),
@@ -9,9 +9,9 @@ create table admins
     primary key (id)
 );
 
-create table admins_roles
+create table users_roles
 (
-    admin_id bigint not null,
+    user_id bigint not null,
     role_id  bigint not null
 );
 
@@ -22,12 +22,12 @@ create table roles
     primary key (id)
 );
 
-alter table if exists admins_roles
-    add constraint FK6ioy9osuscmkmt3b0c32c5w9y
+alter table if exists users_roles
+    add constraint FKj6m8fwv7oqv74fcehir1a9ffy
     foreign key (role_id)
     references roles;
 
-alter table if exists admins_roles
-    add constraint FK8535wewsp17vgt2scahieovxu
-    foreign key (admin_id)
-    references admins;
+alter table if exists users_roles
+    add constraint FK2o0jvgh89lemvvo17cbqvdxaa
+    foreign key (user_id)
+    references users;
