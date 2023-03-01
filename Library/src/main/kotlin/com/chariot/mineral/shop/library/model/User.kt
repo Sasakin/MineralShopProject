@@ -2,6 +2,9 @@ package com.chariot.mineral.shop.library.model
 
 import jakarta.persistence.*
 
+/**
+ * User for B2B logic
+ */
 @Entity
 @Table(name="users")
 data class User(

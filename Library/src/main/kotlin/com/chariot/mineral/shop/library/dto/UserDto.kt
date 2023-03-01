@@ -2,18 +2,18 @@ package com.chariot.mineral.shop.library.dto
 
 import jakarta.validation.constraints.Size
 
-class UserDto {
+class UserDto (
 
     @Size(min = 3, max = 24, message = "Invalid first name")
-    var firstName: String = ""
+    var firstName: String = "",
 
     @Size(min = 3, max = 24, message = "Invalid last name")
-    var lastName: String = ""
+    var lastName: String = "",
 
     @Size(min = 3, max = 24, message = "Invalid username")
-    var username: String = ""
+    var username: String = "",
 
-    var password: String = ""
+    var password: String = "",
 
     var repeatPassword: String = ""
-}
+)
