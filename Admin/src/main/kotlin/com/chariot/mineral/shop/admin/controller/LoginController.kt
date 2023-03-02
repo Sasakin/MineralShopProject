@@ -13,12 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 
 @Controller
-class LoginController {
-    @Autowired
-    private val userService: UserService? = null
+class LoginController(val userService: UserService,
+                      val passwordEncoder: BCryptPasswordEncoder? = null) {
 
-    @Autowired
-    private val passwordEncoder: BCryptPasswordEncoder? = null
     @GetMapping("/login")
     fun loginForm(model: Model): String {
         model.addAttribute("title", "Login")
